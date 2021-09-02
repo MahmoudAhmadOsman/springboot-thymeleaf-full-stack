@@ -1,6 +1,7 @@
 package com.music.controller;
 
 import com.music.model.Song;
+import org.dom4j.rule.Mode;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -20,21 +21,33 @@ public class HomeController {
         return  "songs";
     }
 
-
-//    Song form
-
-
-    @RequestMapping("/songform")
-    public String loadFormPage(){
-
-        return  "songform";
+    @GetMapping("/form")
+    public String loadFormPage(Model model) {
+        model.addAttribute("song", new Song());
+        return "form";
     }
 
 
-//    @RequestMapping("/songform")
-//    public  String loadFormPage(Model model){
-//        model.addAttribute("song", new Song());
-//        return "songform";
-//    }
+    //Process form data
+    @PostMapping("/form")
+    public String loadFormPage(@ModelAttribute Song song, Model model) {
+        model.addAttribute("song", song);
+        return "songs";
+    }
+
+
+
+    @GetMapping("/about")
+    public String aboutPage() {
+        return "about";
+    }
+
+    @GetMapping("/contact")
+    public String contactPage() {
+        return "contact";
+    }
+
+
+
 
 }

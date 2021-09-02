@@ -9,8 +9,19 @@
 <body>
 <div class="list-of-songs" layout:fragment="content">
     <div class="container">
+        <h1>List of Songs</h1>
+        <hr />
         <div class="row">
-            <h1>List of Songs</h1>
+            <div class="col-md-8">
+                <p>Song name is: [[${song.name}]]</p>
+                <p>Artist name is: [[${song.artist}]]</p>
+                <p>The album name is: [[${song.album}]]</p>
+                <p>The song rating is: [[${song.rating}]]</p>
+                <p>Year produced is: [[${song.year}]]</p>
+
+            </div>
+
+
         </div>
     </div>
 </div>
