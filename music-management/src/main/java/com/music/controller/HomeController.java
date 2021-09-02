@@ -4,7 +4,10 @@ import com.music.model.Song;
 import org.dom4j.rule.Mode;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 public class HomeController {
@@ -30,7 +33,10 @@ public class HomeController {
 
     //Process form data
     @PostMapping("/form")
-    public String loadFormPage(@ModelAttribute Song song, Model model) {
+    public String loadFormPage(@Valid @ModelAttribute Song song, Model model,  BindingResult result) {
+       if(result.hasErrors()){
+           return "form";
+       }
         model.addAttribute("song", song);
         return "songs";
     }

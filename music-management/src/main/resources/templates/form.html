@@ -13,6 +13,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                     <input type="text" th:field="*{name}" class="form-control form-control-lg" placeholder="Enter song name">
+                        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
                     </div>
                 </div>
                 <div class="col-md-6">
