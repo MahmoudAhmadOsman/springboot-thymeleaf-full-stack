@@ -37,8 +37,11 @@ public class HomeController {
        if(result.hasErrors()){
            return "form";
        }
-        model.addAttribute("song", song);
-        return "songs";
+       else{
+           model.addAttribute("song", song);
+           return "songs";
+       }
+
     }
 
 
