@@ -1,12 +1,11 @@
 package com.music.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
+@Entity
+@Table(name = "jobs")
 public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,6 +13,7 @@ public class Job {
 
     @Column(name="title", nullable = false)
     private String title;
+
     @Column(name = "employer", nullable = false)
     private String employer;
 

@@ -1,49 +1,55 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="layouts/default">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layouts/default">
 <title> Songs Form</title>
+
 <body>
 <div class="list-of-songs" layout:fragment="content">
     <div class="container">
-            <h1>Song Form</h1>
+        <h1>Song Form</h1>
+        <hr/>
         <form action="#" th:action="@{/form}" th:object="${song}" method="POST">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                    <input type="text" th:field="*{name}" class="form-control form-control-lg" placeholder="Enter song name" required>
+                        <input type="text" th:field="*{name}" class="form-control form-control-lg" placeholder="Enter song name" required>
                         <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                    <input type="text" th:field="*{artist}" class="form-control form-control-lg" placeholder="Enter artist full name">
+                        <input type="text" th:field="*{artist}" class="form-control form-control-lg" placeholder="Enter artist full name">
                     </div>
                 </div>
             </div>
-        <!--  Row 2-->
+            <!--  Row 2-->
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                    <input type="text" th:field="*{album}" class="form-control form-control-lg" placeholder="Enter album name">
+                        <input type="text" th:field="*{album}" class="form-control form-control-lg" placeholder="Enter album name">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                    <input type="text" th:field="*{rating}" class="form-control form-control-lg" placeholder="Enter song rating">
+                        <input type="text" th:field="*{rating}" class="form-control form-control-lg" placeholder="Enter song rating">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                    <input type="text" th:field="*{year}" class="form-control form-control-lg" placeholder="Enter year album produced">
+                        <input type="text" th:field="*{year}" class="form-control form-control-lg" placeholder="Enter year album produced">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <textarea th:field="*{details}"  cols="30" rows="10" class="form-control form-control-lg" placeholder="Enter album details"></textarea>
                     </div>
                 </div>
             </div>
             <input type="submit" value="SUBMIT" class="btn btn-success btn-lg">
-
         </form>
     </div>
 </div>
 </body>
+
 </html>

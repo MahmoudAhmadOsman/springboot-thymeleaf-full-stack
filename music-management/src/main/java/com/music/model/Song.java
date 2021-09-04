@@ -15,29 +15,38 @@ public class Song {
    @Id
    @GeneratedValue(strategy = GenerationType.AUTO)
     private  long id;
+
     @NotNull
     @Size(min=3, max=20)
     private String name;
     @NotNull
     private String artist;
+
     @NotNull
     private String album;
+
     @NotNull
     private int rating;
+
     @NotNull
     private int year;
+
+    @NotNull
+    @Min(3)
+    @Max(300)
+    private String details;
 
     public Song() {
     }
 
-    public Song(long id, String name, String artist, String album, int rating, int year) {
-
+    public Song(long id, String name, String artist, String album, int rating, int year, String details) {
         this.id = id;
         this.name = name;
         this.artist = artist;
         this.album = album;
         this.rating = rating;
         this.year = year;
+        this.details = details;
     }
 
     public long getId() {
@@ -86,5 +95,13 @@ public class Song {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
     }
 }

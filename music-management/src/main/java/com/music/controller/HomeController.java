@@ -14,7 +14,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String index(){
-
         return  "index";
     }
 
@@ -24,6 +23,9 @@ public class HomeController {
         return  "songs";
     }
 
+
+
+    //Get the form
     @GetMapping("/form")
     public String loadFormPage(Model model) {
         model.addAttribute("song", new Song());
