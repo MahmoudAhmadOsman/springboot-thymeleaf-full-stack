@@ -18,8 +18,51 @@ public class Job {
     private String employer;
 
     @Column(name = "description", nullable = false)
+ @Min(3)
     @Max(600)
-    @Min(10)
     private String description;
 
+
+    public Job() {
+    }
+
+
+    public Job(long id, String title, String employer, String description) {
+        this.id = id;
+        this.title = title;
+        this.employer = employer;
+        this.description = description;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getEmployer() {
+        return employer;
+    }
+
+    public void setEmployer(String employer) {
+        this.employer = employer;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
