@@ -11,17 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class JobController {
     @Autowired
     JobRepository jobRepository;
-
-
-
-
+    
     //Get the form
     @GetMapping("/list")
     public String loadJobPage(Model model) {
         model.addAttribute("job", new Job());
         return "list";
     }
-
 
     @RequestMapping("/jobs")
     public String listJobs(Model model){

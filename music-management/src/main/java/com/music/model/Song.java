@@ -104,4 +104,5 @@ public class Song {
     public void setDetails(String details) {
         this.details = details;
     }
+
 }
