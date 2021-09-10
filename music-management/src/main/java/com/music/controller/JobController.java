@@ -26,7 +26,7 @@ public class JobController {
     }
 
 
-    @RequestMapping("/jobs")
+    @RequestMapping("/jobs/list")
     public String listJobs(Model model){
         model.addAttribute("jobs", jobRepository.findAll());
         return "jobs/list";
@@ -46,10 +46,10 @@ public class JobController {
     @PostMapping("/process")
     public String processForm(@Valid Job job, BindingResult result){
         if (result.hasErrors()){
-            return "jobform";
+            return "jobs/jobform";
         }
         jobRepository.save(job);
-        return "list";
+        return "redirect:/jobs";
     }
 
 
