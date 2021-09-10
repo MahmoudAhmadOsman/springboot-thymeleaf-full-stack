@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layouts/default">
+<title> Songs Form</title>
+
+<body>
+<div class="job-form" layout:fragment="content">
+    <div class="container">
+        <h1>Job Form</h1>
+        <hr />
+
+            <form action="#" th:action="@{/users}" th:object="${job}"  method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" th:field="*{title}" class="form-control form-control-lg" placeholder="Enter job title" >
+<!--                        <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>-->
+                        <span class="help-block" th:if="${#fields.hasErrors('title')}">
+                <p th:errors="*{title}" class="text-danger">First name error</p>
+                   </span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" th:field="*{employer}" class="form-control form-control-lg" placeholder="Enter employer name">
+                        <span th:if="${#fields.hasErrors('employer')}" th:errors="*{employer}"></span>
+                    </div>
+                </div>
+            </div>
+            <!--  Row 2-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <textarea th:field="*{description}" cols="30" rows="10" class="form-control form-control-lg" placeholder="Enter job description"></textarea>
+                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg">SUBMIT</button>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

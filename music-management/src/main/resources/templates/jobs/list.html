@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layouts/default">
+
+<head>
+    <title>Jobs List</title>
+</head>
+
+<body>
+<div class="about-page" layout:fragment="content">
+    <div class="container">
+        <h1>List of Jobs</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-10 card">
+                <div th:each="job : ${jobs}">
+                    <h2>[[${job.title}]]</h2>
+                    <h4>[[${job.employer}]]</h4>
+                    <p>[[${job.description}]]</p>
+                </div>
+                <div class="col-md-2">
+                    <a href="/jobs/add">Add A Job</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

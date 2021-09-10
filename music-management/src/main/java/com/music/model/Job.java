@@ -3,6 +3,8 @@ package com.music.model;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "jobs")
@@ -12,13 +14,15 @@ public class Job {
     private long id;
 
     @Column(name="title", nullable = false)
+    @NotEmpty(message = "Title is required")
     private String title;
 
+    @NotEmpty(message = "Employer name is required")
     @Column(name = "employer", nullable = false)
     private String employer;
-
+    @NotEmpty(message = "Jobs description  is required")
     @Column(name = "description", nullable = false)
- @Min(3)
+    @Min(3)
     @Max(600)
     private String description;
 
