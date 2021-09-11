@@ -13,9 +13,9 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <input type="text" th:field="*{title}" class="form-control form-control-lg" placeholder="Enter job title" >
-<!--                        <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>-->
+                            <!--  <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>-->
                         <span class="help-block" th:if="${#fields.hasErrors('title')}">
-                <p th:errors="*{title}" class="text-danger">First name error</p>
+                        <p th:errors="*{title}" class="text-danger">Title is required!</p>
                    </span>
                     </div>
                 </div>
