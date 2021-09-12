@@ -14,34 +14,41 @@ public class HomeController {
 
     @GetMapping("/")
     public String index(){
-        return  "index";
+        return "index";
     }
 
 
     @RequestMapping("/songs")
     public String songs(){
-        return  "songs";
+        return "songs/songs";
     }
 
 
+//  Song landing page
+@GetMapping("/songs")
+public String songsPage(){
+    return
+            "songs/songs";
+}
 
-    //Get the form
-    @GetMapping("/form")
+
+    //Load the form
+    @GetMapping("/songs/form")
     public String loadFormPage(Model model) {
         model.addAttribute("song", new Song());
-        return "form";
+        return "songs/form";
     }
 
 
     //Process form data
-    @PostMapping("/form")
+    @PostMapping("/songs/form")
     public String loadFormPage(@Valid @ModelAttribute Song song, Model model,  BindingResult result) {
        if(result.hasErrors()){
-           return "form";
+           return "songs/songs";
        }
        else{
            model.addAttribute("song", song);
-           return "songs";
+           return "songs/songs";
        }
 
     }
