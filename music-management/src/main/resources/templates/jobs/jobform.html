@@ -8,11 +8,11 @@
         <h1>Job Form</h1>
         <hr />
 
-            <form action="#" th:action="@{/process}" th:object="${job}"  method="post">
+            <form action="#" th:action="@{/process}" th:object="${job}"  method="POST">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="text" th:field="*{title}" class="form-control form-control-lg" placeholder="Enter job title" >
+                        <input type="text" th:field="*{title}" class="form-control form-control-lg input-lg" placeholder="Enter job title" >
                             <!--  <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>-->
                         <span class="help-block" th:if="${#fields.hasErrors('title')}">
                         <p th:errors="*{title}" class="text-danger">Title is required!</p>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="text" th:field="*{employer}" class="form-control form-control-lg" placeholder="Enter employer name">
+                        <input type="text" th:field="*{employer}" class="form-control form-control-lg input-lg" placeholder="Enter employer name">
                         <span th:if="${#fields.hasErrors('employer')}" th:errors="*{employer}"></span>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <textarea th:field="*{description}" cols="30" rows="10" class="form-control form-control-lg" placeholder="Enter job description"></textarea>
+                        <textarea th:field="*{description}" cols="30" rows="10" class="form-control form-control-lg input-lg" placeholder="Enter job description"></textarea>
                         <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
                     </div>
                 </div>
