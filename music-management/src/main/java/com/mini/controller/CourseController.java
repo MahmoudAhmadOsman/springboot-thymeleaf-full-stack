@@ -1,7 +1,7 @@
-package com.music.controller;
+package com.mini.controller;
 
-import com.music.model.Course;
-import com.music.repository.CourseRepository;
+import com.mini.model.Course;
+import com.mini.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

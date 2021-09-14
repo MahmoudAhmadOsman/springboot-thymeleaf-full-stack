@@ -1,4 +1,4 @@
-package com.music.model;
+package com.mini.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;

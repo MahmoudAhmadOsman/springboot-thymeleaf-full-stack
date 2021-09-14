@@ -1,6 +1,6 @@
-package com.music.repository;
+package com.mini.repository;
 
-import com.music.model.Course;
+import com.mini.model.Course;
 import org.springframework.data.repository.CrudRepository;
 
 public interface CourseRepository extends CrudRepository<Course, Long> {

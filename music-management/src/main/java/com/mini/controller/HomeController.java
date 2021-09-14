@@ -1,7 +1,6 @@
-package com.music.controller;
+package com.mini.controller;
 
-import com.music.model.Song;
-import org.dom4j.rule.Mode;
+import com.mini.model.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

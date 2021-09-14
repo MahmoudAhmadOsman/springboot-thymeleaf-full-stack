@@ -1,6 +1,6 @@
-package com.music.repository;
+package com.mini.repository;
 
-import com.music.model.Song;
+import com.mini.model.Song;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface SongRepository extends JpaRepository<Song, Long> {
