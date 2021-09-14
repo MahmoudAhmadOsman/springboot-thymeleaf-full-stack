@@ -49,7 +49,7 @@ public class JobController {
             return "jobs/jobform";
         }
         jobRepository.save(job);
-        return "redirect:/jobs";
+        return "redirect:/jobs/list";
     }
 
 

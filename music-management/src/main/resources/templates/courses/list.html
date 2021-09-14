@@ -1,20 +1,41 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="layouts/default">
-<head>
-    <title>Courses</title>
-</head>
-<body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layouts/default">
 
-<div class="coures-page" layout:fragment="content">
+<head>
+    <title>Jobs List</title>
+</head>
+
+<body>
+<div class="about-page" layout:fragment="content">
     <div class="container">
-        <h1>Lisf Of Courses</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, suscipit!</p>
+        <!-- Start of row 1-->
+        <div class="col-md-10">
+            <h1>List of Courses</h1>
+            <hr>
+        </div>
+        <div class="col-md-2">
+            <a href="/courses/add" class="btn btn-success">Add Course</a>
+        </div>
+        <!-- End of row 2 -->
+        <div class="row">
+            <div class="col-md-10 well well-lg">
+                <div th:each="course, stat : ${courses}">
+                    <!-- <p th:text="${stat.index + 1}">1</p>-->
+                    <h2><a href="#" th:text="${course.title}"></a></h2>
+                    <h4 th:text="${course.instructor}">|
+                        <small class="text-muted"><i>Instructor</i></small>
+                    </h4>
+                    <!-- <p>[[${course.description}]]</p>-->
+                    <p th:text="${course.description}"></p>
+                    <p><b>Course Credit</b> <br />
+                        [[${course.credit}]]
+                        <small class="text-muted"><i>Credits</i></small>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
-
 </body>
+
 </html>

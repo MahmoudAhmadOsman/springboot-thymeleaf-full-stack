@@ -20,10 +20,11 @@ public class Job {
     @NotEmpty(message = "Employer name is required")
     @Column(name = "employer", nullable = false)
     private String employer;
+
     @NotEmpty(message = "Jobs description  is required")
     @Column(name = "description", nullable = false)
     @Min(3)
-    @Max(600)
+    @Max(6000)
     private String description;
 
 

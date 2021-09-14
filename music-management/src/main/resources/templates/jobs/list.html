@@ -8,17 +8,21 @@
 <body>
 <div class="about-page" layout:fragment="content">
     <div class="container">
-        <h1>List of Jobs</h1>
-        <hr>
+        <!-- Start of row 1-->
+        <div class="col-md-10">
+            <h1>List of Jobs</h1>
+            <hr>
+        </div>
+        <div class="col-md-2">
+            <a href="/jobs/add" class="btn btn-success">Add A Job</a>
+        </div>
+        <!-- End of row 2        -->
         <div class="row">
-            <div class="col-md-10 card">
+            <div class="col-md-10 well well-lg">
                 <div th:each="job : ${jobs}">
-                    <h2>[[${job.title}]]</h2>
+                    <h2><a href="#">[[${job.title}]]</a></h2>
                     <h4>[[${job.employer}]]</h4>
                     <p>[[${job.description}]]</p>
-                </div>
-                <div class="col-md-2">
-                    <a href="/jobs/add">Add A Job</a>
                 </div>
             </div>
         </div>
