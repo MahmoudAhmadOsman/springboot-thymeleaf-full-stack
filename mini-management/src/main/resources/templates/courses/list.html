@@ -34,7 +34,7 @@
                         <tbody>
                         <tr th:each="course, stat : ${courses}">
                             <td th:text="${stat.index + 1}">1</td>
-                            <td><a th:href="@{/details/{id}(id=${course.id})}" th:text="${course.title}"></a></td>
+                            <td><a th:href="@{/courses/details/{id}(id=${course.id})}" th:text="${course.title}"></a></td>
                             <td th:text="${course.instructor}"></td>
                             <td th:text="${course.description}"></td>
                             <td>[[${course.credit}]]</td>
