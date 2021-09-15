@@ -6,39 +6,51 @@
 </head>
 
 <body>
-<div class="about-page" layout:fragment="content">
+<section class="about-page" layout:fragment="content">
     <div class="container">
-        <!-- Start of row 1-->
-        <div class="col-md-10">
-            <h1>List of Courses</h1>
-            <hr>
-        </div>
-        <div class="col-md-2">
-            <a href="/courses/add" class="btn btn-success">Add Course</a>
-
-<!-- <a th:href="@{/courses/show/{id}(id=${course.id}})}" class="btn btn-info">Details</a>-->
-        </div>
-        <!-- End of row 2 -->
         <div class="row">
-            <div class="col-md-10 well well-lg">
-                <div th:each="course, stat : ${courses}">
-                    <!-- <p th:text="${stat.index + 1}">1</p>-->
-                    <h2><a href="#" th:text="${course.title}"></a></h2>
-                    <h4 th:text="${course.instructor}">|
-                        <small class="text-muted"><i>Instructor</i></small>
-                    </h4>
-                    <!-- <p>[[${course.description}]]</p>-->
-                    <p th:text="${course.description}"></p>
-                    <p><b>Course Credits</b> <br />
-                        [[${course.credit}]]
-                        <small class="text-muted"><i>Credits</i></small>
-                    </p>
-                    <p><a href="#" class="btn btn-info text-danger fa fa-pencil-square-o"> Register</a></p>
+            <div class="col-md-10">
+                <h1>List of Courses</h1>
+                <hr>
+            </div>
+            <div class="col-md-2">
+                <a href="/courses/add" class="btn btn-success">Add Course</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Course #</th>
+                            <th>Title</th>
+                            <th>Instructor</th>
+                            <th> Description</th>
+                            <th> Credit</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="course, stat : ${courses}">
+                            <td th:text="${stat.index + 1}">1</td>
+                            <td><a th:href="@{/details/{id}(id=${course.id})}" th:text="${course.title}"></a></td>
+                            <td th:text="${course.instructor}"></td>
+                            <td th:text="${course.description}"></td>
+                            <td>[[${course.credit}]]</td>
+                            <td>
+                        <!--   <a th:href="@{/courses/update/{id}(id=${course.id})}">Update</a>-->
+                                <a th:href="@{/courses/details/{id}(id=${course.id})}">Details</a>
+                        <!--  <a th:href="@{/delete/{id}(id=${course.id})}">Delete</a>-->
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 </body>
 
 </html>

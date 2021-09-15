@@ -34,6 +34,13 @@ public class CourseController {
     }
 
 
+    //Show Courses
+    @RequestMapping("/courses/show")
+    public String showCourses(Model model){
+        model.addAttribute("courses", courseRepository.findAll());
+        return "courses/show";
+    }
+
     //Add a course
     @GetMapping("/courses/add")
     public String courseForm(Model model) {
@@ -63,19 +70,19 @@ public class CourseController {
 
     }
 
-    //Update Course
+    //Update Course -- ku noqo oo dhamaystir
     @RequestMapping("/courses/update/{id}")
     public String updateCourse(@PathVariable("id") long id, Model model){
         model.addAttribute("course", courseRepository.findById(id).get());
-        return "courses/list";
+        return "courses/update";
     }
 
 
     //Delete Course
-    @RequestMapping("/courses/delete/{id}")
+    @RequestMapping("/delete/{id}")
     public String deleteCourse(@PathVariable("id") long id){
         courseRepository.deleteById(id);
-        return "courses/courseform";
+        return "redirect:/courses/list";
     }
 
 }

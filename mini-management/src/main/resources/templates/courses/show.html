@@ -2,41 +2,30 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layouts/default">
 
 <head>
-    <title>Jobs List</title>
+    <title>Course Details</title>
 </head>
 
 <body>
-<div class="about-page" layout:fragment="content">
+<section class="about-page" layout:fragment="content">
     <div class="container">
-        <!-- Start of row 1-->
+        <h1>
+            <a href="/courses/list"><small><i class="fa fa-chevron-left" aria-hidden="true"></i></small> </a> &nbsp;
+            Course Details for <i class="text-muted"> [[${course.title}]]</i></h1>
+        <hr />
         <div class="col-md-10">
-            <h1>Courses Details</h1>
-            <hr>
+            <h1>[[${course.title}]]</h1>
+            <h3>Instructor: <i class="text-muted">[[${course.instructor}]]</i></h3>
+            <h3>Credit <i class="text-muted">[[${course.credit}]]</i></h3>
+            <hr />
+            <h3>Course Details</h3>
+            <p> [[${course.description}]]</p>
         </div>
         <div class="col-md-2">
-            <a href="/courses/add" class="btn btn-success">Add Course</a>
-            <a th:href="@{courses/show/{id}(id=${course.id}})}" class="btn btn-info">Details</a>
-        </div>
-        <!-- End of row 2 -->
-        <div class="row">
-            <div class="col-md-10 well well-lg">
-                <div th:each="course, stat : ${courses}">
-                    <!-- <p th:text="${stat.index + 1}">1</p>-->
-                    <h2><a href="#" th:text="${course.title}"></a></h2>
-                    <h4 th:text="${course.instructor}">|
-                        <small class="text-muted"><i>Instructor</i></small>
-                    </h4>
-                    <!-- <p>[[${course.description}]]</p>-->
-                    <p th:text="${course.description}"></p>
-                    <p><b>Course Credits</b> <br />
-                        [[${course.credit}]]
-                        <small class="text-muted"><i>Credits</i></small>
-                    </p>
-                </div>
-            </div>
+            <a class="btn btn-success" th:href="@{/courses/update/{id}(id=${course.id})}">Update</a>
+            <a class="btn btn-danger" th:href="@{/delete/{id}(id=${course.id})}">Delete</a>
         </div>
     </div>
-</div>
+</section>
 </body>
 
 </html>
