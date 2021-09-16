@@ -1,9 +1,9 @@
 package com.mini.model;
 
+import org.springframework.format.annotation.NumberFormat;
+
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 
 @Entity
@@ -14,23 +14,20 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @NotNull
-    @Size(min = 3)
+    @NotEmpty(message = "Title is required!")
 
     private String title;
 
-    @NotNull
-    @Size(min = 3)
+    @NotEmpty(message = "Instructor name is required!")
     private String instructor;
 
-    @NotNull
-    @Size(min = 20)
+    @NotEmpty(message = "Course description is required!")
     @Lob
     private String description;
 
-
     @NotNull
-    @Size(min = 3)
+    @Min(1)
+    @Max(4)
     private int credit;
 
 
