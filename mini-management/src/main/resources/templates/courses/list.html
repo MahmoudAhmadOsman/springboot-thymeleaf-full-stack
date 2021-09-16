@@ -18,35 +18,21 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Course #</th>
-                            <th>Title</th>
-                            <th>Instructor</th>
-                            <th> Description</th>
-                            <th> Credit</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="course, stat : ${courses}">
-                            <td th:text="${stat.index + 1}">1</td>
-                            <td><a th:href="@{/courses/details/{id}(id=${course.id})}" th:text="${course.title}"></a></td>
-                            <td th:text="${course.instructor}"></td>
-                            <td th:text="${course.description}"></td>
-                            <td>[[${course.credit}]]</td>
-                            <td>
-                        <!--   <a th:href="@{/courses/update/{id}(id=${course.id})}">Update</a>-->
-                                <a th:href="@{/courses/details/{id}(id=${course.id})}">Details</a>
-                        <!--  <a th:href="@{/delete/{id}(id=${course.id})}">Delete</a>-->
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+            <div class="col-md-3" th:each="course, stat : ${courses}">
+                <!--  Start of Thumbnail -->
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/1600x900/?code" alt="course image">
+                    <div class="caption">
+                        <h3><a th:href="@{/courses/details/{id}(id=${course.id})}" th:text="${course.title}"></a> <span class="badge" th:text="${stat.index + 1}">1</span></h3>
+                        <td><b>Instructor: </b>[[${course.instructor}]]</td>
+                        <p><b>Credits: </b>[[${course.credit}]]</p>
+                        <p><b>Description: </b>[[${course.description}]]</p>
+                        <p><a th:href="@{/courses/details/{id}(id=${course.id})}" class="btn btn-primary" role="button">Details</a>
+                            <!--  <span class="badge" th:text="${stat.index + 1}">1</span>-->
+                        </p>
+                    </div>
                 </div>
+                <!-- End of Thumbnail -->
             </div>
         </div>
     </div>
