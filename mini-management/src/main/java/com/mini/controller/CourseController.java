@@ -47,26 +47,18 @@ public class CourseController {
     public String courseForm(Model model) {
         model.addAttribute("course", new Course());
         return "courses/courseform";
-
-
     }
-
-
 
     //Process course form
     @PostMapping("/processCourses")
     public String processForm(@Valid Course job, Errors errors){
-
         if (errors.hasErrors()) {
             return "courses/courseform";
         } else {
             courseRepository.save(job);
             return "redirect:/courses/list";
         }
-
-
     }
-
 
 
     //Show course Details
