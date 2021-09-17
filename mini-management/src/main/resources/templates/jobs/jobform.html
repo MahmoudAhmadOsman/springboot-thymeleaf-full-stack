@@ -29,7 +29,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <textarea th:field="*{description}" cols="30" rows="10" class="form-control form-control-lg input-lg" placeholder="Enter job description" required></textarea>
-                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+                        <span class="text-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,6 @@ public class Job {
 
     @NotEmpty(message = "Jobs description  is required")
     @Column(name = "description", nullable = false)
-    @Min(3)
     @Lob
     private String description;
 
