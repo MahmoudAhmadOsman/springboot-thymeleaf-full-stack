@@ -9,7 +9,7 @@
 <section class="about-page" layout:fragment="content">
     <div class="container">
         <h1>
-            <a href="/courses/list"><small><i class="fa fa-chevron-left" aria-hidden="true"></i></small> </a> &nbsp;
+            <a href="/courses/list"><small><i class="fa fa-chevron-left text-danger" aria-hidden="true"></i></small> </a> &nbsp;
             Course Details for <i class="text-muted"> [[${course.title}]]</i></h1>
         <hr />
         <div class="col-md-10">
@@ -18,7 +18,7 @@
             <h1>Credits <i class="text-muted">[[${course.credit}]]</i></h1>
             <hr />
             <h3>Course Details</h3>
-            <p> [[${course.description}]]</p>
+            <p class="text-muted"> [[${course.description}]]</p>
         </div>
         <div class="col-md-2">
             <a class="btn btn-success" th:href="@{/courses/update/{id}(id=${course.id})}">Update</a>
