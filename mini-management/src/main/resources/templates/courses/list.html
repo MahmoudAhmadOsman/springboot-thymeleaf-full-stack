@@ -8,6 +8,10 @@
 <body>
 <section class="about-page" layout:fragment="content">
     <div class="container">
+        <!-- Show success alert when a course is updated-->
+        <div class="alert alert-info" role="alert" th:text="${successUpdate}" th:if="${successUpdate}"></div>
+        <!-- Show delete success alert when a course is deleted-->
+        <div class="alert alert-danger" role="alert" th:text="${deleteSuccess}" th:if="${deleteSuccess}"></div>
         <div class="row">
             <div class="col-md-10">
                 <h1>List of Courses</h1>

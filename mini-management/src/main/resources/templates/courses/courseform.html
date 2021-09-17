@@ -8,6 +8,7 @@
         <h1>Add New Course</h1>
         <hr />
         <form action="#" th:action="@{/processCourses}" th:object="${course}" method="POST">
+            <!-- Show success alert when new course is created-->
             <div class="alert alert-success" role="alert" th:text="${success}" th:if="${success}"></div>
             <div class="row">
                 <div class="col-md-4">

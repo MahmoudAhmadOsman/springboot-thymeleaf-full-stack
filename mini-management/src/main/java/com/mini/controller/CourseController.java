@@ -58,9 +58,25 @@ public class CourseController {
         } else {
             courseRepository.save(job);
             redirAttrs.addFlashAttribute("success", "New courses has been added successfully!");
+
             return "redirect:/courses/add";
         }
     }
+
+
+    //Update Course and show success message
+    @PostMapping("/updateCourses")
+    public String processUpdate(@Valid Course job, Errors errors, RedirectAttributes successRedirect){
+        if (errors.hasErrors()) {
+            return "courses/courseform";
+        } else {
+            courseRepository.save(job);
+            successRedirect.addFlashAttribute("successUpdate", "Course has been updated successfully!");
+            return "redirect:/courses/list";
+        }
+    }
+
+
 
 
     //Show course Details
@@ -76,13 +92,15 @@ public class CourseController {
     public String updateCourse(@PathVariable("id") long id, Model model){
         model.addAttribute("course", courseRepository.findById(id).get());
         return "courses/update";
+
     }
 
 
     //Delete Course
     @RequestMapping("/delete/{id}")
-    public String deleteCourse(@PathVariable("id") long id){
+    public String deleteCourse(@PathVariable("id") long id, RedirectAttributes delSuccess){
         courseRepository.deleteById(id);
+        delSuccess.addFlashAttribute("deleteSuccess", "Course has been deleted successfully!");
         return "redirect:/courses/list";
     }
 
