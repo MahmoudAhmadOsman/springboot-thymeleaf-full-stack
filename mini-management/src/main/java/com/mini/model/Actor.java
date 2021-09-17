@@ -1,9 +1,13 @@
 package com.mini.model;
 
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.Set;
 
+
+@Entity
 public class Actor {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
     private String realname;

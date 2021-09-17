@@ -9,6 +9,7 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String title;
+    private long year;
     private String description;
 
 
@@ -19,10 +20,10 @@ public class Movie {
     public Movie() {
     }
 
-
-    public Movie(long id, String title, String description) {
+    public Movie(long id, String title, long year, String description) {
         this.id = id;
         this.title = title;
+        this.year = year;
         this.description = description;
     }
 
@@ -32,14 +33,6 @@ public class Movie {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getDescription() {
