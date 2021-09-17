@@ -13,7 +13,7 @@
             Course Details for <i class="text-muted"> [[${course.title}]]</i></h1>
         <hr />
         <div class="col-md-10">
-            <h1>[[${course.title}]]</h1>
+            <h1>Course Title: <i class="text-muted">[[${course.title}]]</i></h1>
             <h3>Instructor: <i class="text-muted">[[${course.instructor}]]</i></h3>
             <h3>Credits <i class="text-muted">[[${course.credit}]]</i></h3>
             <hr />
@@ -22,7 +22,7 @@
         </div>
         <div class="col-md-2">
             <a class="btn btn-success" th:href="@{/courses/update/{id}(id=${course.id})}">Update</a>
-            <a class="btn btn-danger" th:href="@{/delete/{id}(id=${course.id})}">Delete</a>
+            <a class="btn btn-danger" th:href="@{/delete/{id}(id=${course.id})}" onclick="return confirm('Are you sure you want to delete this course?');">Delete</a>
         </div>
     </div>
 </section>

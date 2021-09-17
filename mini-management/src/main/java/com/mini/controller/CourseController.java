@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
@@ -51,12 +52,13 @@ public class CourseController {
 
     //Process course form
     @PostMapping("/processCourses")
-    public String processForm(@Valid Course job, Errors errors){
+    public String processForm(@Valid Course job, Errors errors, RedirectAttributes redirAttrs){
         if (errors.hasErrors()) {
             return "courses/courseform";
         } else {
             courseRepository.save(job);
-            return "redirect:/courses/list";
+            redirAttrs.addFlashAttribute("success", "New courses has been added successfully!");
+            return "redirect:/courses/add";
         }
     }
 
