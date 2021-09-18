@@ -77,8 +77,6 @@ public class CourseController {
     }
 
 
-
-
     //Show course Details
     @RequestMapping("/courses/details/{id}")
     public  String showCourse(@PathVariable("id") long id, Model model){
