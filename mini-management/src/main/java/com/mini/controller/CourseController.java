@@ -23,10 +23,10 @@ public class CourseController {
     CourseRepository courseRepository;
 
 
-    @GetMapping("/courses")
-    public String list(){
-        return  "courses/list";
-    }
+//    @GetMapping("/courses")
+//    public String list(){
+//        return  "courses/list";
+//    }
 
     //Courses List
     @RequestMapping("/courses/list")
@@ -52,11 +52,11 @@ public class CourseController {
 
     //Process course form
     @PostMapping("/processCourses")
-    public String processForm(@Valid Course job, Errors errors, RedirectAttributes redirAttrs){
+    public String processForm(@Valid Course course, Errors errors, RedirectAttributes redirAttrs){
         if (errors.hasErrors()) {
             return "courses/courseform";
         } else {
-            courseRepository.save(job);
+            courseRepository.save(course);
             redirAttrs.addFlashAttribute("success", "New courses has been added successfully!");
 
             return "redirect:/courses/add";

@@ -1,15 +1,22 @@
 package com.mini.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Set;
 
 
 @Entity
+
+@Table(name = "actors")
 public class Actor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    @NotEmpty(message = "Actor name is required!")
     private String name;
+
+    @NotEmpty(message = "Actor real name is required!")
     private String realname;
 
 

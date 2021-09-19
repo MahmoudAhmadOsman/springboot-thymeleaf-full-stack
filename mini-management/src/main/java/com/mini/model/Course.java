@@ -28,6 +28,7 @@ public class Course {
     @NotNull
     @Min(1)
     @Max(4)
+    @PositiveOrZero
     private int credit;
 
 
