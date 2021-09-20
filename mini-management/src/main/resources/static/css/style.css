@@ -5,3 +5,43 @@
             -webkit-box-sizing: border-box;
 
    }
+
+
+
+/* Start of landing page style */
+.page-layout {
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:50%;
+    background-size:cover;
+}
+.left {
+    left:0;
+    background-image:url(https://source.unsplash.com/1600x900/?code);
+}
+.right {
+    right:0;
+    /* background-image:url(https://source.unsplash.com/1600x900/?book); */
+}
+.right .page-content{
+    margin: 18%;
+}
+.right .page-content h1{
+    font-size: 42px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.right .page-content p{
+    text-align: center;
+}
+
+/* End of landing page style */
+
+
+.footer{
+    margin-top: 100%;
+    background: #ccc;
+    padding: 15px;
+    text-align: center;
+ }
