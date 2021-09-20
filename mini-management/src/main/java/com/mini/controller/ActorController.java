@@ -1,6 +1,7 @@
 package com.mini.controller;
 
 import com.mini.model.Actor;
+import com.mini.model.Movie;
 import com.mini.repository.ActorRepository;
 import com.mini.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,7 @@ public class ActorController {
     @RequestMapping("/actors/list")
     public String listActors(Model model){
         model.addAttribute("actors", actorRepository.findAll());
+//        model.addAttribute("movies", movieRepository.findAll());
         return "actors/list";
     }
 
@@ -42,6 +44,7 @@ public class ActorController {
     @GetMapping("/actors/add")
     public String actorForm(Model model) {
         model.addAttribute("actor", new Actor());
+//        model.addAttribute("movie", new Movie());
         return "actors/actorform";
     }
 
@@ -54,6 +57,7 @@ public class ActorController {
             return "actors/actorform";
         } else {
             actorRepository.save(actor);
+//            movieRepository.save(movie);
             redirectActors.addFlashAttribute("success", "New actor has been registered successfully!");
 
             return "redirect:/actors/add";
