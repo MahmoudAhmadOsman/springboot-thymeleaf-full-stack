@@ -10,26 +10,20 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
-
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     public static BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
-
     @Override
     protected  void configure(HttpSecurity htttp) throws Exception{
         htttp.authorizeRequests().anyRequest().authenticated()
                 .and().formLogin();
     }
-
-
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
         auth.inMemoryAuthentication().withUser("user")
                 .password(passwordEncoder().encode("password")).authorities("USER");
     }
-
-
 
 
 }
