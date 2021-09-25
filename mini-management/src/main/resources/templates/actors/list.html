@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layouts/default">
-
-<head>
-	<title>Actors List</title>
-</head>
-
-<body>
-<section class="actors-page" layout:fragment="content">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10">
-				<h1 class="text-success">List of Actors</h1>
-				<hr />
-			</div>
-			<div class="col-md-2">
-				<a href="/actors/add" class="btn btn-success">Add Actor</a>
-			</div>
-		</div>
-		<!-- Start of 2nd row -->
-		<div class="row">
-			<div class="col-md-4" th:each="actor, stat : ${actors}">
-				<!--  Start of Thumbnail -->
-				<div class="thumbnail">
-					<img src="https://source.unsplash.com/1600x900/?actor" alt="acor image" />
-					<div class="caption">
-						<h3>
-							<a th:href="@{/actors/details/{id}(id=${actor.id})}" th:text="${actor.name}"></a>
-							<span class="badge" th:text="${stat.index + 1}">1</span>
-						</h3>
-						<p><b>Actor's Real Name: </b> [[${actor.realname}]]</p>
-						<!-- <p>
-                            <a
-                                th:href="@{/actors/details/{id}(id=${actor.id})}"
-                                class="btn btn-primary"
-                                role="button"
-                                >See Details</a
-                            >
-                        </p> -->
-					</div>
-				</div>
-				<!-- End of Thumbnail -->
-			</div>
-		</div>
-		<!-- End of 2nd row -->
-	</div>
-</section>
-</body>
-
+   <head>
+      <title>Actors List</title>
+   </head>
+   <body>
+      <section class="actors-page" layout:fragment="content">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-10">
+                  <h1 class="text-success">List of Actors</h1>
+                  <hr />
+               </div>
+               <div class="col-md-2">
+                  <a href="/actors/add" class="btn btn-success">Add Actor</a>
+               </div>
+            </div>
+            <!-- Start of 2nd row -->
+            <div class="row">
+               <div class="col-md-4" th:each="actor, stat : ${actors}">
+                  <!--  Start of Thumbnail -->
+                  <div class="thumbnail">
+                     <img src="https://source.unsplash.com/1600x900/?actor" alt="acor image" />
+                     <div class="caption">
+                        <h3>
+                           <a th:href="@{/actors/details/{id}(id=${actor.id})}" th:text="${actor.name}"></a>
+                           <span class="badge" th:text="${stat.index + 1}">1</span>
+                        </h3>
+                        <p><b>Actor's Real Name: </b> [[${actor.realname}]]</p>
+                        <!-- <p>
+                           <a
+                               th:href="@{/actors/details/{id}(id=${actor.id})}"
+                               class="btn btn-primary"
+                               role="button"
+                               >See Details</a
+                           >
+                           </p> -->
+                     </div>
+                  </div>
+                  <!-- End of Thumbnail -->
+               </div>
+            </div>
+            <!-- End of 2nd row -->
+         </div>
+      </section>
+   </body>
 </html>
