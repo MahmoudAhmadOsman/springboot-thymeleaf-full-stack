@@ -11,10 +11,20 @@ import javax.validation.Valid;
 @Controller
 public class HomeController {
 
+
     @GetMapping("/")
     public String index(){
         return "index";
     }
+
+
+    //Login route or page
+    @RequestMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+
 
 
     @RequestMapping("/songs")

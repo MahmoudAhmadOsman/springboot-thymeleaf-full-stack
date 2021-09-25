@@ -18,7 +18,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected  void configure(HttpSecurity htttp) throws Exception{
         htttp.authorizeRequests().anyRequest().authenticated()
-                .and().formLogin();
+                .and().formLogin().loginPage("/login").permitAll();
     }
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
         auth.inMemoryAuthentication().withUser("user")
