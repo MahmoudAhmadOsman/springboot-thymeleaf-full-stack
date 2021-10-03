@@ -52,6 +52,8 @@ public class User {
         return email;
     }
 
+
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -60,11 +62,14 @@ public class User {
         return password;
     }
 
+
     public void setPassword(String password) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         this.password = passwordEncoder.encode(password);
 
     }
+
+
 
     public String getFirstName() {
         return firstName;
@@ -98,13 +103,15 @@ public class User {
         this.username = username;
     }
 
-    public User(long id, String email, String password, String firstName, String lastName, boolean enabled, String username) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.enabled = enabled;
-        this.username = username;
+    public User( String email, String password, String firstName, String lastName, boolean enabled, String username) {
+        this.setEmail(email);
+        this.setPassword(password);
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setEnabled(enabled);
+        this.setUsername(username);
     }
+
+
+
 }

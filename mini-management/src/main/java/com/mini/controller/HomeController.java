@@ -24,7 +24,11 @@ public class HomeController {
         return "login";
     }
 
-
+//Admin Route
+    @RequestMapping("/admin")
+    public String admin(){
+        return "admin";
+    }
 
 
     @RequestMapping("/songs")
