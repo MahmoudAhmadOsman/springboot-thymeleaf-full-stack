@@ -54,8 +54,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login").permitAll()
                 .and()
                 .httpBasic();
-        htttp.csrf().disable();
-        htttp.headers().frameOptions().disable();
+                htttp.csrf().disable();
+                htttp.headers().frameOptions().disable();
 
     }
 
