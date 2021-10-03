@@ -16,13 +16,13 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
     @Bean
     public static BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
 
     @Autowired
-    //private SSUserDetailsService userDetailsService;
     private SSUserDetailsService userDetailsService;
 
 
@@ -64,6 +64,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+        auth.userDetailsService(userDetailsService())
+                .passwordEncoder(passwordEncoder());
+
+
         auth.inMemoryAuthentication().withUser("osman")
                 .password(passwordEncoder().encode("12345")).authorities("ADMIN");
     }
