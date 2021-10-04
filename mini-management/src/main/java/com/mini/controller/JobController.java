@@ -40,8 +40,6 @@ public class JobController {
         return "jobs/jobform";
     }
 
-
-
     //Process jobs form
     @PostMapping("/process")
     public String processForm(@Valid Job job, BindingResult result){
@@ -53,11 +51,6 @@ public class JobController {
     }
 
 
-
-
-
-
-
     //Show course Details
     @RequestMapping("/jobs/details/{id}")
     public  String showJob(@PathVariable("id") long id, Model model){
@@ -67,14 +60,6 @@ public class JobController {
     }
 
 
-
-
-
-
-
-
-
-
     //Delete job
     @RequestMapping("/deleteJob/{id}")
     public String deleteAJob(@PathVariable("id") long id, RedirectAttributes deljobSuccess){
@@ -82,11 +67,6 @@ public class JobController {
         deljobSuccess.addFlashAttribute("deljobSuccess", "Job has been deleted successfully!");
         return "redirect:/jobs/list";
     }
-
-
-
-
-
 
 
 
