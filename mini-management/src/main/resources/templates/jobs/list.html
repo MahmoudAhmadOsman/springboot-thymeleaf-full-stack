@@ -10,7 +10,7 @@
     <div class="container">
         <!-- Start of row 1-->
         <div class="col-md-10">
-            <h1>List of Jobs</h1>
+            <h1 class="text-info">List of Jobs</h1>
             <hr>
         </div>
         <div class="col-md-2">
@@ -20,9 +20,11 @@
         <div class="row">
             <div class="col-md-10 well well-lg">
                 <div th:each="job : ${jobs}">
-                    <h2><a href="#">[[${job.title}]]</a></h2>
+                    <h2><a th:href="@{/jobs/details/{id}(id=${job.id})}" th:text="${job.title}"></a></h2>
+<!--                    <h2><a href="#">[[${job.title}]]</a></h2>-->
                     <h4>[[${job.employer}]]</h4>
                     <p>[[${job.description}]]</p>
+
                 </div>
             </div>
         </div>

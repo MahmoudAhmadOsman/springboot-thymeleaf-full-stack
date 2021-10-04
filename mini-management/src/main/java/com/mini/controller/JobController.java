@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
@@ -49,6 +51,41 @@ public class JobController {
         jobRepository.save(job);
         return "redirect:/jobs/list";
     }
+
+
+
+
+
+
+
+    //Show course Details
+    @RequestMapping("/jobs/details/{id}")
+    public  String showJob(@PathVariable("id") long id, Model model){
+        model.addAttribute("job", jobRepository.findById(id).get());
+        return "jobs/show";
+
+    }
+
+
+
+
+
+
+
+
+
+
+    //Delete job
+    @RequestMapping("/deleteJob/{id}")
+    public String deleteAJob(@PathVariable("id") long id, RedirectAttributes deljobSuccess){
+        jobRepository.deleteById(id);
+        deljobSuccess.addFlashAttribute("deljobSuccess", "Job has been deleted successfully!");
+        return "redirect:/jobs/list";
+    }
+
+
+
+
 
 
 
