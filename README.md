@@ -6,7 +6,7 @@
  * Thymeleaf
  * MYSQL
  * JPA
- * Bootstrap 4
+ * Bootstrap 3
 
 
 ## Clone
