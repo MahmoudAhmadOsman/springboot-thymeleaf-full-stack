@@ -51,7 +51,7 @@ public class JobController {
     }
 
 
-    //Show course Details
+    //Show job Details
     @RequestMapping("/jobs/details/{id}")
     public  String showJob(@PathVariable("id") long id, Model model){
         model.addAttribute("job", jobRepository.findById(id).get());
