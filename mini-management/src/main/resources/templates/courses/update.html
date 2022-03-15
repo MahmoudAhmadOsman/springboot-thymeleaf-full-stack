@@ -16,21 +16,21 @@
                     <div class="form-group">
                         <label th:field="*{title}"><b>Course Title</b></label>
                         <input type="text" name="title" th:field="*{title}" class="form-control form-control-lg input-lg" placeholder="Enter course title">
-                        <p class="alert alert-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
+                        <p class="text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label th:field="*{instructor}"><b>Instructor Name</b></label>
                         <input type="text" th:field="*{instructor}" class="form-control form-control-lg input-lg" placeholder="Enter instructor name">
-                        <p class="alert alert-danger" th:if="${#fields.hasErrors('instructor')}" th:errors="*{instructor}"></p>
+                        <p class="text-danger" th:if="${#fields.hasErrors('instructor')}" th:errors="*{instructor}"></p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label th:field="*{credit}"><b>Course Credit</b></label>
                         <input type="text" th:field="*{credit}" class="form-control form-control-lg input-lg" placeholder="Enter course credit">
-                        <p class="alert alert-danger" th:if="${#fields.hasErrors('credit')}" th:errors="*{credit}"></p>
+                        <p class="text-danger" th:if="${#fields.hasErrors('credit')}" th:errors="*{credit}"></p>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                     <div class="form-group">
                         <label th:field="*{description}"><b>Course Description</b></label>
                         <textarea th:field="*{description}" cols="30" rows="10" class="form-control form-control-lg input-lg" placeholder="Enter course description"></textarea>
-                        <p class="alert alert-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></p>
+                        <p class="text-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></p>
                     </div>
                 </div>
             </div>
