@@ -14,7 +14,7 @@
 To clone this project use this command
 
 ```bash
-$ git clone 
+$ git clone https://github.com/MahmoudAhmadOsman/job-managment-system.git
 ```
 
 ### My Website
