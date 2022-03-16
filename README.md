@@ -14,7 +14,7 @@
 To clone this project use this command
 
 ```bash
-$ git clone https://github.com/MahmoudAhmadOsman/job-managment-system.git
+$ git clone https://github.com/MahmoudAhmadOsman/spring-boot-thymeleaf-sms.git
 ```
 
 ### My Website
