@@ -1,6 +1,4 @@
-package com.mini.model;
-
-import org.springframework.format.annotation.NumberFormat;
+package com.mini.beans;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;

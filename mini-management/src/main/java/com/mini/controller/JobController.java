@@ -1,6 +1,6 @@
 package com.mini.controller;
 
-import com.mini.model.Job;
+import com.mini.beans.Job;
 import com.mini.repository.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

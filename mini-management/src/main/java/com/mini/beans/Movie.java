@@ -1,4 +1,4 @@
-package com.mini.model;
+package com.mini.beans;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;

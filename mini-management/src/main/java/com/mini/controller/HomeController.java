@@ -1,6 +1,6 @@
 package com.mini.controller;
 
-import com.mini.model.Song;
+import com.mini.beans.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

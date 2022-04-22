@@ -1,7 +1,6 @@
 package com.mini.controller;
 
-import com.mini.model.Actor;
-import com.mini.model.Movie;
+import com.mini.beans.Actor;
 import com.mini.repository.ActorRepository;
 import com.mini.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
