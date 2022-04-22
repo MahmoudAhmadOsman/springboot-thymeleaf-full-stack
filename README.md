@@ -120,7 +120,7 @@ public class Course {
         </div>
         <div class="row">
             <div class="col-md-3" th:each="course, stat : ${courses}">
-                <!--  Start of Thumbnail -->
+            
                 <div class="thumbnail">
                     <img src="https://source.unsplash.com/1600x900/?code" alt="course image">
                     <div class="caption">
@@ -133,7 +133,7 @@ public class Course {
                         </p>
                     </div>
                 </div>
-                <!-- End of Thumbnail -->
+         
             </div>
         </div>
     </div>
