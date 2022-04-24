@@ -15,8 +15,8 @@ public class CourseService {
     private CourseRepository courseRepository;
 
 
-    //get method
-    public List<Course> getListOfCourses(){
+//get method
+public List<Course> getListOfCourses(){
         try{
             return courseRepository.findAll();
         }catch (Exception e){
@@ -24,11 +24,9 @@ public class CourseService {
               HttpStatus.NOT_FOUND, "No courses found!", e
             );
         }
-
     }
 
 //get by id
-
    public Course getCourseById(Long id) {
         try {
             return courseRepository.findById(id).get();
@@ -40,9 +38,7 @@ public class CourseService {
    }
 
 
-   //post method
-
-
+//post method
 public Course saveCourse(Course course){
         try {
             return courseRepository.save(course);
