@@ -13,7 +13,6 @@ public class Course {
     private long id;
 
     @NotEmpty(message = "Title is required!")
-
     private String title;
 
     @NotEmpty(message = "Instructor name is required!")

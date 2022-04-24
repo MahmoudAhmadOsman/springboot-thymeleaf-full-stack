@@ -9,13 +9,17 @@
 <section class="course-page" layout:fragment="content">
     <div class="container">
         <h5>
-            <a href="/courses/list"><small><i class="fa fa-chevron-left text-danger" aria-hidden="true"></i></small> </a> &nbsp;
+            <a href="/courses/list"><small>
+                <i class="fa fa-chevron-left text-danger" aria-hidden="true"></i></small>
+            </a> &nbsp;
             Course Details for <i class="text-muted"> [[${course.title}]]</i></h5>
         <hr />
     <!-- Start of panel       -->
         <div class="col-md-10">
         <div class="panel panel-default">
-            <div class="panel-heading"><h1>Course Title: <i class="text-muted">[[${course.title}]]</i></h1></div>
+            <div class="panel-heading">
+                <h2>Course Name: <i class="text-muted">[[${course.title}]]</i></h2>
+            </div>
             <div class="panel-body">
                 <h3>Instructor: <i class="text-muted">[[${course.instructor}]]</i></h3>
                 <h4>Credits <i class="text-muted">[[${course.credit}]]</i></h4>

@@ -27,7 +27,31 @@ public class CourseService {
 
     }
 
+//get by id
 
+   public Course getCourseById(Long id) {
+        try {
+            return courseRepository.findById(id).get();
+        }catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Can't find course with this id! ", e
+            );
+        }
+   }
+
+
+   //post method
+
+
+public Course saveCourse(Course course){
+        try {
+            return courseRepository.save(course);
+        }catch (Exception e){
+            throw new ResponseStatusException(
+              HttpStatus.BAD_REQUEST, "Unable to save this course! ", e
+            );
+        }
+}
 
 
 }
