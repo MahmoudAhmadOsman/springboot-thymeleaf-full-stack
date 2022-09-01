@@ -152,6 +152,6 @@ public class Course {
 Please, visit my website
 [www.mahmoudosman.com](http://www.mahmoudosman.com/)
 
-### Social Media
+### LinkedIn
 
 LinkedIn Profile Link: [LinkedIn](https://www.linkedin.com/in/mahmoudaoman/) 
