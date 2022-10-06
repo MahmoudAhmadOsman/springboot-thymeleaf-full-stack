@@ -14,12 +14,6 @@
  
 
 ```bash
-package com.mini.model;
-
-import org.springframework.format.annotation.NumberFormat;
-
-import javax.persistence.*;
-import javax.validation.constraints.*;
 
 
 @Entity
