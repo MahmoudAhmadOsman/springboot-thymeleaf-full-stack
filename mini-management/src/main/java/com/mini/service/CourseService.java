@@ -15,7 +15,7 @@ public class CourseService {
     private CourseRepository courseRepository;
 
 
-//get method
+//Get all courses
 public List<Course> getListOfCourses(){
         try{
             return courseRepository.findAll();
@@ -26,7 +26,7 @@ public List<Course> getListOfCourses(){
         }
     }
 
-//get by id
+//Get  course by id
    public Course getCourseById(Long id) {
         try {
             return courseRepository.findById(id).get();
@@ -38,7 +38,7 @@ public List<Course> getListOfCourses(){
    }
 
 
-//post method
+//Create new course
 public Course saveCourse(Course course){
         try {
             return courseRepository.save(course);
