@@ -144,7 +144,7 @@ public class Course {
 ### My Website
 
 Please, visit my website
-[www.mahmoudosman.com](http://www.mahmoudosman.com/)
+[mahmoudosman.com](http://www.mahmoudosman.com/)
 
 ### LinkedIn
 
