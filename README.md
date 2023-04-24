@@ -1,4 +1,4 @@
-## Spring Boot & Thymeleaf   CRUD RESTAPI
+## Springboot & Thymeleaf Application 
 
  Built  with [Springboot](https://spring.io/projects/spring-boot), JPA, Thymeleaf and MYSQL.
 ## Used Technologies :+1: 
