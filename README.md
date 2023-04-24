@@ -10,9 +10,8 @@
  * Bootstrap 3
 
 
-## Code Samples
+#### Code Samples
 #### Course Class with JPA annotations
- 
 
 ```bash
 
@@ -96,7 +95,7 @@ public class Course {
 }
 ```
 
-## Display course content in Thymeleaf template using Bootstrap
+#### Display course content in Thymeleaf template using Bootstrap
 ```bash
 <section class="course-list-page" layout:fragment="content">
     <div class="container">
