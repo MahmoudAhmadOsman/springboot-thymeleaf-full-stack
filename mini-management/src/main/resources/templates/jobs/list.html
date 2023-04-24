@@ -8,7 +8,7 @@
 <body>
 <div class="job-list-page" layout:fragment="content">
     <div class="container">
-        <!-- Start of row 1-->
+        <!-- row 1-->
         <div class="col-md-10">
             <h1 class="text-info">List of Jobs</h1>
             <hr>
@@ -16,7 +16,7 @@
         <div class="col-md-2">
             <a href="/jobs/add" class="btn btn-success">Add A Job</a>
         </div>
-        <!-- End of row 2        -->
+        <!-- row 2        -->
         <div class="row">
             <div class="col-md-10 well well-lg">
                 <div th:each="job : ${jobs}">
