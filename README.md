@@ -96,7 +96,7 @@ public class Course {
 }
 ```
 
-## Display the course content in Thymeleaf template using Bootstrap
+## Display course content in Thymeleaf template using Bootstrap
 ```bash
 <section class="course-list-page" layout:fragment="content">
     <div class="container">
