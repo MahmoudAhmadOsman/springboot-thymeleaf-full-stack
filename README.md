@@ -6,6 +6,7 @@
  * Thymeleaf
  * MYSQL
  * JPA
+ * Hibernate 
  * Bootstrap 3
 
 
