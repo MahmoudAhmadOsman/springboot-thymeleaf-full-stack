@@ -1,7 +1,7 @@
 ### Springboot & Thymeleaf Application 
 
  Built  with [Springboot](https://spring.io/projects/spring-boot), JPA, Thymeleaf and MYSQL.
-## Used Technologies :+1: 
+#### Used Technologies :+1: 
  * Spring Boot
  * Thymeleaf
  * MYSQL
